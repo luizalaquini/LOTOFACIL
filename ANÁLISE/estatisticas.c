@@ -2,13 +2,18 @@
 #include <stdlib.h>
 #include "estatisticas.h"
 
-#define LINHA 2440 // ######################### IMPORTANTE
+#define LINHA 2442 // ######################### IMPORTANTE
 #define COLUNA 15
 #define NUM_BOLAS 25
 #define MAX_PRIMOS 9
 
 int EhPrimo (int num){
     if (num == 2 || num == 3 || num == 5 || num == 7 || num == 11 || num == 13 || num == 17 || num == 19 || num == 23) return 1;
+    else return 0;
+}
+
+int EhConsecutivo (int a, int b){
+    if (a + 1 == b) return 1;
     else return 0;
 }
 

@@ -3,7 +3,7 @@
 #include "estatisticas.h"
 #include "sistema.h"
 
-#define LINHA 2440 // ######################### IMPORTANTE
+#define LINHA 2442 // ######################### IMPORTANTE
 #define COLUNA 15
 #define NUM_BOLAS 25
 #define MAX_PRIMOS 9
@@ -48,7 +48,7 @@ int main (){
             
             vetorA[(matriz[i][j])-1]++; // armazena bolas do sorteio atual (booleano)
             if(i<LINHA-1){ // -1 para não "estourar" numero de sorteios        
-                vetorB[(matriz[i+1][j])-1]++; // armazena bolas do sorteio posterior (booleano)  
+                vetorB[(matriz[i+1][j])-1]++; // armazena bolas do sorteio anterior (booleano)  
             }
 
             qtdCadaNum[matriz[i][j]-1]++;
@@ -64,7 +64,7 @@ int main (){
 
             if(i<LINHA-1){ // -1 para não "estourar" numero de sorteios
                 vetorC[k] = vetorA[k] + vetorB[k];
-                if(vetorC[k] == 2){ // se é 2 a mesma bola foi sorteada nos sorteios "atual" e "posterior"
+                if(vetorC[k] == 2){ // se é 2 a mesma bola foi sorteada nos sorteios "atual" e "anterior"
                     vetorQtdRepeteAnterior[i]++;
                 }
                 vetorA[k] = 0; // restaura
@@ -95,6 +95,7 @@ int main (){
 
     sist_exibeRelatorios(mediaPrimos, mediaRepeteAnterior, mediaConsecutivos, modaPrimos, modaRepetidos, modaConsecutivos, percPrimos, percConsecutivos, percRepete);
 
+    regraGerador(matriz);
     extra(qtdCadaNum);
 
     // LIBERA MEMÓRIA UTILIZADA

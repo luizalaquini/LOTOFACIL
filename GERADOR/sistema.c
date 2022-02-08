@@ -15,9 +15,9 @@ int troca (void);
 /**/
 
 void sist_introducao (void){
-    printf("--------------------------------------------------------------------------\n");
-    printf("---------------------- GERADOR DE JOGO DA LOTOFACIL ----------------------\n");
-    printf("-------------------------- By: Luiza B. Laquini --------------------------\n\n");
+    printf("-------------------------------------------------------------------------------------------\n");
+    printf("------------------------------ GERADOR DE JOGO DA LOTOFACIL -------------------------------\n");
+    printf("---------------------------------- By: Luiza B. Laquini -----------------------------------\n\n");
 }
 
 int* sist_pedeAnterior (void){
@@ -101,28 +101,12 @@ int obedeceRegras (int *jogo, int *anterior){
     * */
 
     /*LIMITE AMPLO (Raphael):
-    * 4 a 7 números primos
-    * 7 a 11 números repetidos em relação ao sorteio anterior
-    * Até 6 números consecutivos (maior sequencia de consecutivos)
+    * 4 a 6 números primos
+    * 7 a 10 números repetidos em relação ao sorteio anterior
+    * 3 a 6 números consecutivos (maior sequencia de consecutivos)
     * */
-
-    /*LIMITE MÉDIO (Luiza):
-    * 5 ou 6 números primos
-    * 8 a 10 números repetidos em relação ao sorteio anterior
-    * 4 ou 5 números consecutivos (maior sequencia de consecutivos)
-    * */
-
-    /*LIMITE RESTRITÃO - só na moda
-    * 5 números primos
-    * 9 números repetidos em relação ao sorteio anterior
-    * 4 ou 5 números consecutivos (maior sequencia de consecutivos)
-    * */
-
-    // A seguir, descomente apenas 1 if
-    /*if (primos >= 4 && primos <= 7 && repetidos >= 7 && repetidos <= 11 && maior <=6 && impares >= 6 && impares <= 9 && metadeMenor >= 6 && metadeMenor){ // Limite amplo */
-    if (primos >= 5 && primos <= 6 && repetidos >= 8 && repetidos <= 10 && maior >= 4 && maior <=5 && impares >= 6 && impares <= 9 && metadeMenor >= 6 && metadeMenor){ // Limite médio
-    /* if (primos == 5 && repetidos == 9 && maior >= 4 && maior <=5 && impares >= 6 && impares <= 9 && metadeMenor >= 6 && metadeMenor){ // Limite restritão */
     
+    if (primos >= 4 && primos <= 6 && repetidos >= 7 && repetidos <= 10 && maior >= 3 && maior <=6 && impares >= 6 && impares <= 9 && metadeMenor >= 6 && metadeMenor){ // Limite médio
         printf("\nESSE JOGO CONTÉM:\n");
         printf("%d números pares + %d números ímpares\n", (TAM-impares), impares);
         printf("%d números menores < 14 (metade menor) + %d números >= 14 (metade maior)\n", metadeMenor, (TAM-metadeMenor));
